@@ -286,7 +286,124 @@ $iphone7plus->ChangeSpec('16GB','37inch','64GB','white');
  print_r($row);
  echo "</pre>";
  
+ /------------------------------------------------------------------
+ 
+ 
+ <?php
+   
+   class Iphone {
+       public $name;
+       public $ram;
+       public function __construct($na,$ra){
+           $this->name=$na;
+           $this->ram=$ra;
+           echo "Hello " . $na . "Your device has " . $ra ." Ram";
+       }
+   }
+   
+   
+   class Sony extends Iphone{
+       
+   }
+   
+   $phone = new Iphone("Amani",4);
 
+   
+?>
+
+<?php
+   
+   class Iphone {
+       public $name;
+       public $ram;
+       
+       
+       public function __call($method,$params){
+           echo "The ". $method . " is not found \n";
+           print_r($params);
+       }
+ 
+   }
+   
+   
+   $phone= new Iphone();
+$phone->WelcomeToApp("Moemen","2GB");
+
+   
+?>
+
+ /------------------------------------------------------------------
+ 
+ <?php
+   
+   class Iphone {
+       public $name;
+       private $ram;
+       
+       /*
+       public function __get($prop){
+          echo "The Property ". $prop . " is not found";
+       }
+       */
+        public function __set($prop,$val){
+          echo "The Property ". $prop . " is not found";
+          echo "And You cant assigne this value " .$val ." to it";
+       }
+   }
+   
+   
+   $phone= new Iphone();
+   $phone->ram = "4GB";
+
+   <?php
+   
+   class Iphone {
+       public $name;
+       public $email;
+       public function __construct($n,$e){
+           $this->name= $n;
+          $this->email= $e;
+       }
+       
+   }
+   
+   
+   $main= new Iphone("Moemen","moemensaadeh3@gmail.com");
+   $copy = clone $main;
+   $main->name="ali";
+   $copy->name="khaled";
+    
+    echo "<pre>";
+   print_r($main);
+   echo "</pre>";
+
+   
+      echo "<pre>";
+   print_r($copy);
+   echo "</pre>";
+
+?>
+ /------------------------------------------------------------------
+ 
+ 
+?>
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  
  
 ?>
