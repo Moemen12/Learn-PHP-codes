@@ -131,7 +131,66 @@ $iphone7plus->ChangeSpec('16GB','37inch','64GB','white');
   /------------------------------------------------------------------
   
   
+   
+  <?php
   
+  
+  class AppleDevice{
+  
+  public $ram = '1GB'; // All properties here will be default properties
+  public $space = '6GB'; 
+  public $inch = '3.3 inch';
+  public $color = 'blue';
+  public $name;
+
+  
+ // Method
+ public function ChangeSpec($ra,$in,$sp,$co){
+     $this->ram= $ra;
+     $this->inch=$in;
+     $this->space=$sp;
+     $this->color=$co;
+ }
+  
+ 
+  public function sayHello($n){
+   $this->name= $n;
+   echo "Welcome to " . $n;
+  }
+  }
+  
+  
+  
+  class Sony extends AppleDevice{
+      public $screen = 'LCD';
+    public function sayHello($n){
+   $this->name= $n;
+   echo "Welcome " . $n;
+  }
+  }
+
+  
+  $iphone6plus = new AppleDevice();
+  $iphone6plus->ChangeSpec('4GB','7inch','32GB','gold');
+ $iphone6plus->sayHello("IPhone");
+ $iphone6plus->price="300$";
+
+   echo '<pre>';
+   print_r($iphone6plus);
+   echo '</pre>';
+ 
+   $sony = new Sony();
+  $sony->ChangeSpec('90GB','7inch','32GB','gold');
+ $sony->sayHello("Sony");
+   echo '<pre>';
+   print_r($sony);
+   echo '</pre>';
+ 
+ 
+  /------------------------------------------------------------------
+ 
+ 
+    
   
   
   
