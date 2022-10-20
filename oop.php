@@ -189,7 +189,62 @@ $iphone7plus->ChangeSpec('16GB','37inch','64GB','white');
  
   /------------------------------------------------------------------
  
+ <?php
+  
+  abstract class MakeDevice{
+      abstract public function TestPerfomance();
+      abstract public function verifyOwner();
+      abstract public function sayWelcome($n);
+  }
+  
+  class Iphone extends MakeDevice {
+   public $owner;
+   public function TestPerfomance(){
+       echo "Performance is Good 100%";
+   }
+     public function verifyOwner(){
+       echo "Owner is verified";
+   }
+     public function sayWelcome($s){
+        $this->owner=$s;
+       echo "Welcome " . $s;
+   }
+   
+  }
+
+  class Ipad extends MakeDevice {
+       public $owner;
+      public function TestPerfomance(){
+       echo "Performance is Good 100%";
+   }
+     public function verifyOwner(){
+       echo "Owner is verified";
+   }
+     public function sayWelcome($y){
+        $this->owner=$y;
+       echo "Welcome " . $y;
+   }
+  }
+
+  
+  $iphone = new Iphone();
+  $iphone->sayWelcome("Moemen");
+   echo '<pre>';
+   print_r($iphone);
+   echo '</pre>';
  
+   $ipad = new Ipad();
+   $ipad->sayWelcome("Ahmad");
+   echo '<pre>';
+   print_r($ipad);
+   echo '</pre>';
+ 
+
+ 
+ ?>
+ 
+   /------------------------------------------------------------------
+    
     
   
   
