@@ -245,7 +245,51 @@ $iphone7plus->ChangeSpec('16GB','37inch','64GB','white');
  
    /------------------------------------------------------------------
     
-    
+    <?php
+ 
+ interface DBConnects{
+        public function getUsers();
+        public function getArticles();
+        public function showStats();
+ }
+ 
+ class MySql implements DBConnects {
+    public function getUsers(){
+      echo"SELECT * FROM USERS";
+    }
+    public function getArticles(){
+             echo"SELECT * FROM ARTICLES"; 
+        }
+  public function showStats(){
+             echo"SELECT * FROM STATS"; 
+        }
+ }
+ 
+ class Oracle  implements DBConnects{
+         public function getUsers(){
+      echo"Hello FROM USERS";
+    }
+    public function getArticles(){
+     echo"Hello FROM ARTICLES"; 
+        }
+  public function showStats(){
+     echo"Hello FROM STATS"; 
+        }
+ }
+ 
+ 
+ $row = new Oracle();
+ $row->getUsers();
+ $row->getArticles();
+ $row->showStats();
+ echo "<pre>";
+ print_r($row);
+ echo "</pre>";
+ 
+
+ 
+ 
+?>
   
   
   
