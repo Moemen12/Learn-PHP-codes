@@ -127,7 +127,8 @@ $iphone7plus->ChangeSpec('16GB','37inch','64GB','white');
   echo '<pre>';
   var_dump($iphone);
   echo '</pre>';
-  
+    
+  /------------------------------------------------------------------
   
   
   
@@ -144,7 +145,7 @@ $iphone7plus->ChangeSpec('16GB','37inch','64GB','white');
   
   
   
-  
+ 
   
   
   
